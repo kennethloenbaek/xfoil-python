@@ -4,3 +4,4 @@ dist/
 venv/
 .idea/
 cmake-build-debug/
+*.so
