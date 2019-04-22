@@ -57,8 +57,16 @@ sources = [
 ]
 # Setting source path location
 sources = [os.path.join("src",source) for source in sources]
+# Compiler flags
+extra_compile_args = [
+    "-O",
+    "-fbounds-check",
+    "-finit-real=inf",
+    "-ffpe-trap=invalid,zero",
+    "-fdefault-real-8"
+]
 # Adding sorces to config and giving name
-config.add_extension('libxfoil', sources= sources)
+config.add_extension('libxfoil', sources= sources, extra_compile_args=extra_compile_args)
 
 def readme():
     with open('README.md') as f:
